@@ -1,0 +1,43 @@
+
+.pagination ::ng-deep .ngx-pagination .current {
+    background: #17a2b8 !important;
+    border-radius: 20px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border: transparent !important;
+    
+}
+.pagination ::ng-deep .ngx-pagination a:hover, .ngx-pagination button:hover {
+    background: #17a2b8 !important;
+    border-radius: 20px !important; 
+    border: transparent !important;
+    padding-left: 9px;
+    padding-right: 9px;
+    text-decoration: none;
+}
+.pagination ::ng-deep .ngx-pagination a:focus, .ngx-pagination button:focus {
+    outline: none;
+    background: #d4d4d4;
+}
+.center {
+    text-align: center;
+  }
+  .pagination {
+    font-family: Arial;
+}
+.btn {
+    background-color: #f4511e;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    white-space: break-spaces !important;
+  }
+  
+  .btn:hover {
+      opacity: 1;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+}

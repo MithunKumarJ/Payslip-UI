@@ -1,0 +1,87 @@
+<div class="overlay" style="
+/* background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%) !important; */
+background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%) !important;
+">
+  <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+     <!--   con = Container  for items in the form-->
+     <div class="con">
+     <!--     Start  header Content  -->
+     <header class="head-form">
+        <h2>Log In</h2>
+        <!--     A welcome message or an explanation of the login form -->
+        <p>login here using your username and password</p>
+     </header>
+     <!--     End  header Content  -->
+     <br>
+     <div class="field-set">
+       
+        <!--   user name -->
+           <span class="input-item">
+             <i class="fa fa-user-circle"></i>
+           </span>
+          <!--   user name Input-->
+           <input class="form-input" id="txt-input" type="text" placeholder="@UserName" formControlName="username" required style="
+           width: 250px;
+           height: 50px;
+           margin-top: 2%;
+           padding: 15px;
+           font-size: 16px;
+           font-family: 'Abel', sans-serif;
+           color: #5E6472;
+           outline: none;
+           border: none;
+           border-radius: 0px 5px 5px 0px;
+           transition: 0.2s linear;
+       ">
+       
+        <br>
+       
+             <!--   Password -->
+       
+        <span class="input-item">
+          <i class="fa fa-key"></i>
+         </span>
+        <!--   Password Input-->
+        <input class="form-input" type="password" placeholder="Password" id="pwd"  formControlName="password" required style="
+        width: 250px;
+        height: 50px;
+        margin-top: 2%;
+        padding: 15px;
+        font-size: 16px;
+        font-family: 'Abel', sans-serif;
+        color: #5E6472;
+        outline: none;
+        border: none;
+        border-radius: 0px 5px 5px 0px;
+        transition: 0.2s linear;
+    ">
+       
+ 
+       
+       
+        <br>
+        <p *ngIf="isVisible">{{message}}</p>
+  <!--        buttons -->
+  <!--      button LogIn -->
+        <button class="log-in"> Log In </button>
+     </div>
+    
+  <!--   other buttons -->
+     <div class="other">
+  <!--      Forgot Password button-->
+        <button class="btn submits frgt-pass">Forgot Password</button>
+  <!--     Sign Up button -->
+        <button class="btn submits sign-up">Sign Up 
+  <!--         Sign Up font icon -->
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
+        </button>
+  <!--      End Other the Division -->
+     </div>
+       
+  <!--   End Conrainer  -->
+    </div>
+    
+    <!-- End Form -->
+  </form>
+  </div>
+  

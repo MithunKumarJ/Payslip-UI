@@ -1,0 +1,158 @@
+<app-header></app-header>
+<div style="text-align: center;" *ngIf="loader===false">
+    <img src="assets/image/loader.gif">
+    </div>
+  <link href='https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link href='//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css' rel='stylesheet' type='text/css'>
+  <link href='//cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/1.8/css/bootstrap-switch.css' rel='stylesheet' type='text/css'>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js' type='text/javascript'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js' type='text/javascript'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/1.8/js/bootstrap-switch.min.js' type='text/javascript'></script>
+  <script src='https://davidstutz.github.io/bootstrap-multiselect/js/bootstrap-multiselect.js' type='text/javascript'></script>
+
+  <div class='container' *ngIf="loader">
+    <div class='panel panel-primary dialog-panel'>
+      <div class='panel-heading'>
+        <h5>Employe Details</h5>
+      </div>
+      <div class='panel-body'>
+        <form class='form-horizontal' [formGroup]="employeform" (ngSubmit)="onSubmit()">
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2'>E-Code</label>
+            <div class='col-md-2'>
+                <input class='form-control'  placeholder='eCode' formControlName="eCode" type='text'  value={{validateData.eCode}}>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Name At EpfRecord</label>
+            <div class='col-md-8'>
+              <div class='col-md-3 indent-small'>
+                <div class='form-group internal'>
+                  <input class='form-control' id='id_first_name' placeholder='Name At EpfRecord' formControlName="nameAtEpfRecord" value={{validateData.nameAtEpfRecord}} type='text' style="
+                  margin-left: -5px;
+              ">
+                </div>
+              </div>
+              <label class='control-label col-md-2 col-md-offset-2' for='id_title' style="
+              margin-left: -57px;">Name</label>
+              <div class='col-md-3 indent-small'>
+                <div class='form-group internal'>
+                  <input class='form-control' id='name' placeholder='Name' type='text' formControlName="name" value={{validateData.name}}>
+                </div>
+              </div>
+              <label class='control-label col-md-2 col-md-offset-2' for='id_title' style="
+              margin-left: -18px;" >Father Name</label>
+              <div class='col-md-3 indent-small'>
+                <div class='form-group internal'>
+                  <input class='form-control' id='first_name' placeholder='FirstName' type='text' formControlName="firstName" value={{validateData.firstName}} required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_adults'>Date of Birth</label>
+            <div class='col-md-8'>
+              <div class='col-md-2'>
+                <div class='form-group internal'>
+                  <input class='form-control col-md-8' id='id_adults' value={{validateData.dateOfBirth}} placeholder='Date of Birth' formControlName="dateOfBirth" required>
+                </div>
+              </div>
+              <label class='control-label col-md-2 col-md-offset-2'  style="width: 167px;">Date of Joining</label>
+              <div class='col-md-3 indent-small'>
+                <div class='form-group internal'>
+                  <input class='form-control' id='id_children' value={{validateData.dateOfJoining}} formControlName="dateOfJoining" placeholder='Date of Joining' required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>Gender</label>
+            <div class='col-md-2'>
+                <input class='form-control' id='id_ecode' placeholder='Gender' type='text' formControlName="sex" value={{validateData.sex}} required> 
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_adults'>Plant</label>
+            <div class='col-md-8'>
+              <div class='col-md-2'>
+                <div class='form-group internal'>
+                  <input class='form-control col-md-8' id='plant' value={{validateData.plant}} formControlName="plant" placeholder='plant' required>
+                </div>
+              </div>
+              <label class='control-label col-md-2 col-md-offset-2' >category</label>
+              <div class='col-md-3 indent-small'>
+                <div class='form-group internal'>
+                  <input class='form-control' id='category' value={{validateData.category}} formControlName="category" placeholder='category' required>
+                </div>
+              </div>
+              <label class='control-label col-md-2 col-md-offset-2' style="margin-left: -22px;">Status</label>
+              <div class='col-md-3 indent-small'>
+                <div class='form-group internal'>
+                  <input class='form-control' id='status' value={{validateData.status}} formControlName="status" placeholder='status' required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>Phone</label>
+            <div class='col-md-2'>
+                <input class='form-control' id='id_ecode' placeholder='phone' type='text' formControlName="phone" value={{validateData.phone}} required>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>PAN</label >
+            <div class='col-md-2'>
+                <input class='form-control' id='id_ecode' placeholder='pan' type='text' formControlName="pan" value={{validateData.pan}} required>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>Aadhaar</label>
+            <div class='col-md-2'>
+                <input class='form-control' id='aadhaar' placeholder='aadhaar' type='text' formControlName="aadhaar" value={{validateData.aadhaar}} required>
+            </div>
+          </div>
+          <h3 class="hdr">Bank Details</h3>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='bank'>Bank</label>
+            <div class='col-md-6'>
+              <div class='form-group'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='bank' value={{validateData.bank}} placeholder='Bank' formControlName="bank" type='text' required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>Account Number</label>
+            <div class='col-md-2'>
+                <input class='form-control' id='id_ecode' placeholder='ecode' type='text' formControlName="bankAccountNumber" value={{validateData.bankAccountNumber}} required>
+            </div>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation' style="margin-left: -47px;">Bank IFSC</label>
+            <div class='col-md-2'>
+                <input class='form-control' id='bankIfsc' placeholder='IFSC' type='text' formControlName="bankIfsc" value={{validateData.bankIfsc}} required>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>ESI</label>
+            <div class='col-md-2'>
+                <input class='form-control' id='bankIfsc' placeholder='IFSC' type='text' formControlName="esi" value={{validateData.esi}} required>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>UAN</label>
+            <div class='col-md-2'>
+                <input class='form-control' id='uan' placeholder='uan' type='text' formControlName="uan" value={{validateData.uan}} required>
+            </div>
+          </div>
+           
+          <div class='form-group'>
+            <div class='col-md-offset-4 col-md-3'>
+              <input type="submit" class='btn-lg btn-primary' type='submit'>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+

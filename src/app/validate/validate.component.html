@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div style="text-align: center;" *ngIf="loader===false">
+<img src="assets/image/loader.gif">
+</div>
+<div class="container" *ngIf="loader">
+	
+	<div class="table">
+		<div class="table-header">
+            <div class="header__item"><a id="name" class="filter__link" href="#">Id</a></div>
+		<div class="header__item"><a id="name" class="filter__link" href="#">E-Code</a></div>
+		<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">plant</a></div>
+		<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Date Of Joining</a></div>
+		<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Category</a></div>
+		<div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Name</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Name At EpfRecord</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Sex</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Date Of Birth</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">father Name</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Bank</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Bank AccountNumber</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Bank Ifsc</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Aadhaar</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Phone</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Pan</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">ESI</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">UAN</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Status</a></div>
+
+		</div>
+		<div class="table-content" *ngFor="let masterResources of validateResource | paginate : {
+                  itemsPerPage: pageSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index">
+           
+            <div class="table-row btn" (click)="validateData(masterResources.eCode)">        	
+            <div class="table-data">{{i+1}}</div> 
+            <div class="table-data">{{masterResources.eCode}}</div>
+            <div class="table-data">{{masterResources.plant}}</div>
+            <div class="table-data">{{masterResources.dateOfJoining}}</div>
+            <div class="table-data">{{masterResources.category}}</div>
+            <div class="table-data">{{masterResources.name}}</div>
+            <div class="table-data">{{masterResources.nameAtEpfRecord}}</div>
+            <div class="table-data">{{masterResources.sex}}</div>
+            <div class="table-data">{{masterResources.dateOfBirth}}</div>
+            <div class="table-data">{{masterResources.firstName}}</div>
+            <div class="table-data">{{masterResources.bank}}</div>
+            <div class="table-data">{{masterResources.bankAccountNumber}}</div>
+            <div class="table-data">{{masterResources.bankIfsc}}</div>
+            <div class="table-data">{{masterResources.aadhaar}}</div>
+            <div class="table-data">{{masterResources.phone}}</div>
+            <div class="table-data">{{masterResources.pan}}</div>
+            <div class="table-data">{{masterResources.esi}}</div>
+            <div class="table-data">{{masterResources.uan}}</div>
+            <div class="table-data">{{masterResources.status}}</div>
+		</div>	
+		</div>
+            <div class="center">
+                  <div class="pagination">
+                  <pagination-controls
+                    previousLabel="Prev"
+                    nextLabel="Next"
+                    [responsive]="true"
+                    (pageChange)="handlePageChange($event)"
+                  ></pagination-controls>
+                  </div>
+                </div>
+	</div>
+      
+</div>
